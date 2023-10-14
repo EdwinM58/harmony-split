@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  background: #041207;
+  color: white;
+  font-family: "Inter var", sans-serif;
+  user-select: none;
+}
+
+.harmonic-series {
+  transform: rotate(90deg); /* This scales the SVG by 150% */
+  margin-top: 60px;
+  margin-right: 70px;
+}
+
+.hero-head {
+  font-size: 10vw;
+  font-weight: 800;
+  padding: 0;
+  margin: 0;
+  line-height: 1em;
+
+  background: linear-gradient(
+    135deg,
+    #ff00d2,
+    #fed90f,
+    #00a2ff,
+    #09f1b8,
+    #ff00d2,
+    #fed90f,
+    #00a2ff,
+    #09f1b8
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 300% 300%;
+  animation: gradient 8s ease-in-out infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hero-section {
+  font-size: 24px;
+  line-height: 2;
+  font-weight: bold;
+  position: absolute;
+  margin-top: 5rem;
+}
+
+.split-layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.hero-container {
+  padding: 1rem;
+  height: 100%;
+}
+
+.splitter-container {
+  width: 100%;
+}
+
+@media (max-width: 1115px) {
+  /* Change layout to vertical when screen width is 768px or less */
+  .split-layout {
+    flex-direction: column;
+  }
+
+  /* Adjust styles for smaller screens if needed */
+}
+
+.split-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.dnd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Add this line */
+  text-align: center;
+  width: 100%;
+  padding: 3rem;
+}
+
+.drop-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+.dropbox {
+  border: 2px dashed grey;
+  outline: 4px solid white; /* Adjust the values as desired */
+  outline-offset: 6pcx; /* Adjust the value as desired */
+  border-style: dashed;
+  border-radius: 10px;
+  height: 100%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 12rem;
+  justify-content: center;
+  padding: 2rem;
+  transform: scale(1); /* Set initial scale */
+  transition: transform 0.3s ease-in-out; /* Set transition property and duration */
+  background: rgb(237, 229, 7, 0.1);
+
+  @media (max-width: 840px) {
+    width: 50%;
+  }
+
+  @media (max-height: 760px) {
+    width: 70%;
+    height: 20%;
+  }
+}
+
+@media (max-height: 870px) {
+  .dropbox {
+    height: 50%;
+  }
+
+  .dnd {
+    margin-top: -5rem;
+    padding: 6rem;
+  }
+}
+
+@media (max-height: 670px) {
+  .dropbox {
+    height: 50%;
+  }
+
+  .dnd {
+    margin-top: -5rem;
+    padding: 3rem;
+  }
+}
+
+@media (max-height: 600px) {
+  .dropbox {
+    height: 10%;
+    gap: 1rem;
+  }
+
+  .dnd {
+    margin-top: -9rem;
+    padding: 3rem;
+  }
+}
+
+.dropbox.active {
+  /* Apply scale transformation when active */
+  transform: scale(1.04);
+}
+
+.dropbox:hover {
+  background: rgb(237, 229, 7, 0.3);
+  cursor: pointer;
+  transform: scale(1.04);
+}
+
+.file-upload-button {
+  border-radius: 10px;
+
+  cursor: pointer;
+  padding: 5px 15px; /* Add padding around the text */
+
+  padding-bottom: 3px; /* Adjust the spacing between text and border on hover */
+}
+
+.file-upload-button:hover {
+  transform: scale(1.1);
+}
+
+#fileInput {
+  display: none;
+}
