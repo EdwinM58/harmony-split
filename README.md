@@ -1,6 +1,7 @@
 # Harmony Split - Frontend
 
 Harmony Split is a web application designed for vocal separation, powered by a modern technology stack for an efficient and seamless user experience. This README focuses on the frontend of the application.
+https://harmony--split.web.app/
 
 ## Technologies Used
 
