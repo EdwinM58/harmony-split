@@ -59,7 +59,7 @@ git clone https://github.com/edwinm58/harmony-split.git
 2. Install dependencies
 
 ```bash
-cd harmony-split-frontend
+cd harmony-split
 npm install
 ```
 
